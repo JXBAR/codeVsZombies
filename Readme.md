@@ -39,3 +39,6 @@ sim = Simulation(lines, agen)
 ```
 
 Press the "SPACE" key to move the simulation forward step by step. Note that the space button must be pressed twice to move to the second round (index 1) because the player orientation needs one round to compute (visualized by a yellow dot).
+
+
+![image](https://github.com/user-attachments/assets/3944354d-8200-4a7d-bd58-0691e20fb7cc)
