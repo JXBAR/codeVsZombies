@@ -110,7 +110,6 @@ class Simulation():
             zombie['x'] = zombie['nx']
             zombie['y'] = zombie['ny']
             dist = self.distanceEuclidienne(zombie['x'], zombie['y'], self.player_x, self.player_y)
-            print('dist', dist)
             closestHuman = None
             closestDist = float('inf')
             humans = self.humans + [{"x": self.player_x, "y": self.player_y}]

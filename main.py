@@ -24,7 +24,7 @@ screen_height = 900
 
 # Créer la fenêtre
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Simulation Caméra Pygame")
+pygame.display.set_caption("Code vs Zombies")
 
 # Définir les couleurs
 white = (255, 255, 255)
@@ -168,13 +168,14 @@ while running:
     infoDisplay.store(1, 'Score', f"{state['score']}")
     infoDisplay.store(2, 'Player', f"({state['player']['x']}, {state['player']['y']})")
     infoDisplay.store(3, 'Zombies', f"({state['zombie_count']})")
+    infoDisplay.store(4, 'Civilans', f"({state['human_count']})")
     infoDisplay.store(10,"PRESS SPACE TO RUN", '')
 
     result = ' - '
     if(state['finished']):
         result = 'VICTORY' if state['victory'] else 'DEFEAT'
     
-    infoDisplay.store(4, 'Result', result)
+    infoDisplay.store(5, 'Result', result)
 
     infoDisplay.draw(screen, font, view['xe'] + 10, view['offset_y'] + 20,  white)
     pygame.display.flip()
