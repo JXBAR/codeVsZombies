@@ -2,6 +2,8 @@
 
 This project is a Python3 simulator for the coding game challenge ["Code vs Zombies"](https://www.codingame.com/multiplayer/optimization/code-vs-zombies). It allows you to visualize and test your strategies for the game using Pygame.
 
+![image](https://github.com/user-attachments/assets/de9ee970-bb42-4169-829a-130c0f38a1f0)
+
 ## Steps to Run Your Solution
 
 1. **Install Pygame**
@@ -39,4 +41,4 @@ python3 main.py
 ```
 
 Press the "SPACE" key to move the simulation forward step by step. Note that the space button must be pressed twice to move to the second round (index 1) because the player orientation needs one round to compute (visualized by a yellow dot).
-![image](https://github.com/user-attachments/assets/de9ee970-bb42-4169-829a-130c0f38a1f0)
+
