@@ -9,7 +9,7 @@ This project is a Python3 simulator for the coding game challenge ["Code vs Zomb
    Run the following command to install Pygame:
 
 ```sh
-   pip install pygame
+pip install pygame
 ```
 
 2. **Create a Class that Extends AbstractAgen**
@@ -35,7 +35,7 @@ sim = Simulation(lines, agen)
 3. **Run the simuulation**
 
 ```sh
-    python3 main.py
+python3 main.py
 ```
 
 Press the "SPACE" key to move the simulation forward step by step. Note that the space button must be pressed twice to move to the second round (index 1) because the player orientation needs one round to compute (visualized by a yellow dot).
