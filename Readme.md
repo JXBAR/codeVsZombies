@@ -32,7 +32,7 @@ with open(level_file, 'r') as file:
 agen = ClosestZombieAgen()
 sim = Simulation(lines, agen)
 ```
-3. **Run the simuulation**
+3. **Run the simulation**
 
 ```sh
 python3 main.py
