@@ -1,6 +1,6 @@
 # Python3 Simulator for the Coding Game Challenge "Code vs Zombies"
 
-This project is a Python3 simulator for the coding game challenge "Code vs Zombies". It allows you to visualize and test your strategies for the game using Pygame.
+This project is a Python3 simulator for the coding game challenge ["Code vs Zombies"](https://www.codingame.com/multiplayer/optimization/code-vs-zombies). It allows you to visualize and test your strategies for the game using Pygame.
 
 ## Steps to Run Your Solution
 
