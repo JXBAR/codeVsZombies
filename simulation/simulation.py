@@ -1,4 +1,5 @@
 from  .agent import AbstractAgen
+import copy
 import math
 
 class Simulation():
@@ -6,10 +7,11 @@ class Simulation():
         self.states = []
         self.round = 0
         self.score = 0
+        self.agen = agen
+        self.finished = False
+        self.victory = False
         self.loadLevel(levelData);
         self.saveState()
-        self.agen = agen
-    
     def loadLevel(self, lines):
         self.player_x, self.player_y = map(int, lines[0].strip().split())
         self.human_count =  int(lines[1].strip());
@@ -40,6 +42,8 @@ class Simulation():
         state = {
             "round": self.round,
             "score": self.score,
+            "finished": self.finished,
+            "victory": self.victory,
             "player": {
                 "type": "player",
                 "x": self.player_x,
@@ -91,13 +95,15 @@ class Simulation():
         return score
     
     def tick(self):
+        if(self.finished):
+            return True
         target = self.agen.play(
             self.player_x,
             self.player_y,
             self.human_count,
-            self.humans.copy(),
+            copy.deepcopy(self.humans),
             self.zombie_count,
-            self.zombies.copy()
+            copy.deepcopy(self.zombies)
         )
 
         for zombie in self.zombies:
@@ -138,6 +144,20 @@ class Simulation():
         self.human_count = len(self.humans)
 
         self.round = self.round + 1
+
+        if(self.human_count == 0):
+            self.finished = True
+            self.victory = False
+            self.saveState()
+            return True
+    
+        if(self.zombie_count == 0):
+            if(self.human_count > 0):
+                self.finished = True
+                self.victory = True
+                self.saveState()
+                return True
+        
         self.saveState()
-        print(self.states[self.round])
+        return False
 
